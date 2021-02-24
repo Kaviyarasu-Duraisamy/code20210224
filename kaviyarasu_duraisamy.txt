@@ -1,0 +1,30 @@
+//Publication Date Extraction
+function publication_date() {
+	console.log(document.querySelector('.item .views-field-nothing .field-content > span:nth-of-type(1) > font > font').innerHTML.trim());
+}
+
+//Bidding Date Extraction
+function bidding_date() {
+	console.log(document.querySelector('.item .views-field-nothing .field-content > span:nth-of-type(6) > font > font').innerHTML.trim());
+}
+	
+//Object Extraction
+function object() {
+	console.log(document.querySelector('.item .views-field-nothing .field-content > p:nth-of-type(1) > font > font').innerHTML);
+}
+
+//Links Extraction
+function links() {
+	let links = document.querySelectorAll('.item .views-field-field-historico-da-licitacao td:nth-of-type(2) div > a');
+	links.forEach(function (link, i) {
+	    console.log('Link %d: %s', i+1, link.href);
+	});
+}
+
+function extract() {
+	publication_date();
+	bidding_date();
+	object();
+	links();
+}
+extract();
